@@ -1,0 +1,24 @@
+set nocompatible
+
+<%= show_vim_config :variables, required: true %>
+
+" Personalize: allows customizations via a local configuration
+call SourceIfReadable("~/.vimrc.local.pre")
+
+<%= show_vim_config :plugin_manager, required: true %>
+<%= show_vim_config :sane_defaults %>
+<%= show_vim_config :basic_keymappings %>
+
+call plug#begin(expand("~/.vim/bundle"))
+
+<%= show_vim_config :startup_screen %>
+<%= show_vim_config :appearance %>
+<%= show_vim_config :diff %>
+<%= show_vim_config :mouse_support %>
+
+<%= show_vim_config :status_line %>
+<%= show_vim_config :colorschemes %>
+<%= show_vim_config :editor %>
+
+call plug#end()
+colorscheme nova

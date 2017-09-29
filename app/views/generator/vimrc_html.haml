@@ -1,0 +1,5 @@
+%pre.vim-config.codehilite
+  %code
+    - config = partial "generator/vimrc"
+    - html = Pygments.highlight(config, lexer: :vim, options: { linenos: :inline, encoding: 'utf-8'})
+    = html.html_safe

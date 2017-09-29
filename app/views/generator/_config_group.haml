@@ -1,0 +1,12 @@
+.form-group.row
+  .col-sm-2.strong
+    = type.to_s.titleize
+  .col-sm-10
+    - list_vim_configs(type).each_slice(4) do |group|
+      .form-row
+        - group.each do |config|
+          .form-check.col-3
+            %label.form-check-label
+              = check_box_tag config, checked: (check || params[config]),
+                class: "form-check-input", disabled: disabled
+              = config.titleize
