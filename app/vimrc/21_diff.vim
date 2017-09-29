@@ -2,7 +2,6 @@
 " -->  group: POWER_USER
 
 if has("diff")
-
   " --> ignore whitespace in diff mode (focus on code changes only)
   set diffopt+=iwhite
 

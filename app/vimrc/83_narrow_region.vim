@@ -1,3 +1,6 @@
+" " --> action: OPTIONAL
+" " -->  group: POWER_USER
+
 " Plug 'chrisbra/NrrwRgn'
 " " remove highlighting for narrow region
 " let g:nrrw_rgn_nohl = 1

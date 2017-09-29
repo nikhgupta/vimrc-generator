@@ -1,5 +1,4 @@
 Vimspec::App.controllers :generator, map: "/" do
-  set :erb, :escape_html => false
   get :index do
     render 'index'
   end

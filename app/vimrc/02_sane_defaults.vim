@@ -41,5 +41,13 @@ set lazyredraw
 " --> always show line numbers
 set number
 
+" --> (security) reject modelines altogether
+set nomodeline
+" --> (security) do not allow per-directory vim configurations
+set noexrc
+set secure
+" --> (security) use a stronger encryption method
+if exists("&cryptmethod") | set cryptmethod=blowfish | endif
+
 " --> enable '%' key to match much more than braces.
 runtime macros/matchit.vim
