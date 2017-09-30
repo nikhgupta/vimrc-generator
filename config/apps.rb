@@ -12,25 +12,28 @@
 #   Padrino.mount('WebSite').host(/.*\.?example.org/)
 #   Padrino.mount('Foo').to('/foo').host('bar.example.org')
 #
-# Note 1: Mounted apps (by default) should be placed into the project root at '/app_name'.
-# Note 2: If you use the host matching remember to respect the order of the rules.
+# Note 1: Mounted apps (by default) should be placed into the project root at
+# '/app_name'.
+# Note 2: If you use the host matching remember to respect the order of the
+# rules.
 #
-# By default, this file mounts the primary app which was generated with this project.
-# However, the mounted app can be modified as needed:
+# By default, this file mounts the primary app which was generated with this
+# project. However, the mounted app can be modified as needed:
 #
-#   Padrino.mount('AppName', :app_file => 'path/to/file', :app_class => 'BlogApp').to('/')
+#   Padrino.mount('AppName', app_file: 'path/to/file',
+#                            app_class: 'BlogApp').to('/')
 #
 
 ##
-# Setup global project settings for your apps. These settings are inherited by every subapp. You can
-# override these settings in the subapps as needed.
+# Setup global project settings for your apps. These settings are inherited by
+# every subapp. You can override these settings in the subapps as needed.
 #
 Padrino.configure_apps do
   # enable :sessions
-  set :session_secret, '7588c2e63f86b03622fd8dd180411e761d95ccc0cb18d799257344ba92fc0369'
-  set :protection, :except => :path_traversal
+  set :session_secret, Digest::SHA512.hexdigest('VimRCG')
+  set :protection, except: :path_traversal
   set :protect_from_csrf, true
 end
 
 # Mounts the core application for this project
-Padrino.mount('Vimspec::App', app_file: Padrino.root('app/app.rb')).to('/')
+Padrino.mount('VimRCG::App', app_file: Padrino.root('app/app.rb')).to('/')

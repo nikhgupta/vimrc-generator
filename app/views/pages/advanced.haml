@@ -1,0 +1,47 @@
+%header#header.header
+  .container
+    .branding
+      %h1.logo
+        %a{href: url_for(:pages, :index)}
+          %span.icon_documents_alt.icon{"aria-hidden" => "true"}
+          %span.text-highlight VimRC
+          %span.text-bold Generator
+    %ol.breadcrumb
+      %li
+        %a{href: url_for(:pages, :index)} Home
+      %li.active Customization
+.doc-wrapper
+  .container
+    #doc-header.doc-header.text-center
+      %h1.doc-title
+        %i.icon.fa.fa-magic
+        Customization
+      .meta
+        %i.fa.fa-clock-o
+        Last updated: Jan 25th, 2016
+    .doc-body
+      .doc-content
+        .content-inner
+          = form_tag url_for(:generator, :customize), id: "customize-config" do
+            - topic_list.each do |topic|
+              %section.doc-section{id: "#{topic.name.downcase.gsub(/[^a-z0-9]/, '-')}-section"}
+                %h2.section-title= topic.sanitized_name
+                .section-block
+                  %ul
+                    - topic.sections.each_with_index do |section, idx|
+                      %li
+                        - section_id = "[sections][#{(topic.id * 1000 + idx)}]"
+                        = hidden_field_tag section_id, value: "0"
+                        = check_box_tag section_id, checked: true, class: "section-check"
+                        = section.headings.map(&:titleize).join("<br/>")
+                        .code-block.codehilite
+                          = highlight section.content
+            = submit_tag "Generate", id: "generate-config",
+              class: "btn btn-success", "data-spy" => "affix"
+
+      .doc-sidebar.hidden-xs
+        %nav#doc-nav
+          %ul#doc-menu.nav.doc-menu{"data-spy" => "affix"}
+            - topic_list.each do |topic|
+              %li
+                %a.scrollto{href: "##{topic.name.downcase.gsub(/[^a-z0-9]/, '-')}-section"}=topic.name

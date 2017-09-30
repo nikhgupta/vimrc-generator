@@ -1,0 +1,6 @@
+- name = topic.sanitized_name
+" #{name}#{' ' * (30 - name.length)} {{{
+- topic.sections.each do |section|
+  = "\" --> #{section.title}".html_safe
+  = section.content.html_safe + "\n"
+" }}}

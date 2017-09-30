@@ -1,0 +1,76 @@
+---
+IrresponsibleModule:
+  exclude:
+  - VimRCG::App
+  - VimRCG::App::GeneratorHelper
+  - ScssInitializer
+  - Section
+  - Topic
+  - TopicList
+  - VimRCG::Utility
+  - VimRCG::RSpecHelper
+UtilityFunction:
+  exclude:
+  - VimRCG::App::GeneratorHelper#highlight
+  - VimRCG::Utility#from_csv
+  - VimRCG::RSpecHelper#config_fixture_path
+DuplicateMethodCall:
+  exclude:
+  - ScssInitializer#self.registered
+  - Section#add_heading
+  - Section#self.create
+  - Topic#action
+  - Topic#parse_sections
+InstanceVariableAssumption:
+  exclude:
+  - Section
+  - Topic
+  - TopicList
+TooManyStatements:
+  exclude:
+  - initialize
+  - Section#self.create
+  - Topic#parse_sections
+  - TopicList#where_metadata
+FeatureEnvy:
+  exclude:
+  - Topic#parse_metadata
+  - TopicList#topic?
+TooManyInstanceVariables:
+  exclude:
+  - Topic
+BooleanParameter:
+  exclude:
+  - TopicList#where_id_in
+  - TopicList#where_in
+  - TopicList#where_not_in
+  - VimRCG::RSpecHelper#topic_for
+  - VimRCG::RSpecHelper#topic_present?
+ControlParameter:
+  exclude:
+  - TopicList#where_in
+  - TopicList#where_not_in
+  - VimRCG::RSpecHelper#topic_for
+  - VimRCG::RSpecHelper#topic_present?
+DataClump:
+  exclude:
+  - TopicList
+NestedIterators:
+  exclude:
+  - TopicList#where_metadata
+PrimaDonnaMethod:
+  exclude:
+  - TopicList
+RepeatedConditional:
+  exclude:
+  - TopicList
+TooManyMethods:
+  exclude:
+  - TopicList
+UncommunicativeVariableName:
+  exclude:
+  - TopicList#find
+  - TopicList#topic?
+  - TopicList#where_in
+  - TopicList#where_metadata
+  - TopicList#where_not_in

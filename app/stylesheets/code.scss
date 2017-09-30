@@ -109,27 +109,38 @@ pre {
   padding: 10px;
   margin: 0;
   line-height: 23px;
+  font-size: 14px;
   white-space: pre;
-  overflow-x: auto;
+  overflow: hidden;
   word-break: inherit;
   word-wrap: inherit;
-  font-family: "Fira Mono", monospace;
-  span.lineno {
-    color: #e8e8e8;
-  }
-  &.codehilite .c, &.codehilite .cd {
-    font-style: normal;
-    color: #b8b8b8;
-  }
+  color: #666;
 }
 
-.codehilite .gl { 
-  background: #fafafa;
-  border-right: 1px solid #ddd;
-  color: $border;
-  user-select: none;
-  padding: 0 5px;
-  overflow: hidden;
+pre, code {
+  font-family: "Fira Mono", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+.codehilite {
+  .k {
+    font-weight: normal;
+  }
+  .c, .cd {
+    color: #bbb;
+    font-style: normal;
+  }
+  span.lineno {
+    color: #c8c8c8;
+    padding: 0 3px 0 1px;
+  }
+  .gl {
+    background: #fafafa;
+    border-right: 1px solid #ddd;
+    color: $border;
+    user-select: none;
+    padding: 0 5px;
+    overflow: hidden;
+  }
 }
 
 p code, li code, td code {

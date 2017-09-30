@@ -1,0 +1,45 @@
+%header.header.text-center
+  .container
+    .branding
+      %h1.logo
+        %span.icon_documents_alt.icon{"aria-hidden" => "true"}
+        %span.text-highlight VimRC
+        %span.text-bold Generator
+    .tagline
+      %p Download customizable VIM configuration using an API
+      %p
+        Designed with
+        %i.fa.fa-heart
+        for VIM users
+
+%section.cards-section.text-center
+  .container
+    %h2.title Getting started is easy!
+    .intro
+      %p
+        You can get started with the latest version of Vim configuration, using
+        the following terminal command:
+        %pre#command
+          %code
+            curl -s "https://vimrc.org/api/generate" > ~/.vimrc; vim +PlugInstall +q
+
+      .cta-container
+        %a.btn.btn-primary.btn-cta{href: url_for(:pages, :customize)}
+          %i.fa.fa-magic
+          Review and Customize Now
+
+    #cards-wrapper.cards-wrapper.row
+      .item.item-green.col-md-4.col-sm-6.col-xs-6
+        .item-inner
+          .icon-holder
+            %i.icon.fa.fa-paper-plane
+          %h3.title Quick Start
+          %p.intro Get started with VIM in a moment
+          %a.link{target: "command"}
+            %span
+
+      = partial 'feature_card'
+      = partial 'feature_card'
+      = partial 'feature_card'
+      = partial 'feature_card'
+      = partial 'feature_card'

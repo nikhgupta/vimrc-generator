@@ -1,0 +1,23 @@
+set nocompatible
+
+= display_topic list, :variables
+= display_topic list, :plugin_manager
+
+" --> Personalize: allows customizations via a local configuration
+if filereadable(expand("~/.vimrc.pre")) | source ~/.vimrc.pre | endif
+
+- if list.has_topic?(:plugin_manager)
+  = 'call plug#begin(expand("~/.vim/bundle"))'.html_safe
+
+- list.topics.each do |topic|
+  - next if %w[variables plugin_manager].include?(topic.name)
+  = display_topic list, topic.name
+
+- if list.has_topic?(:plugin_manager)
+  = 'call plug#end()'.html_safe
+
+- if list.has_topic?(:basic_colors)
+  = "colorscheme nova\nlet g:airline_theme='nova'".html_safe
+
+" --> Personalize: allows customizations via a local configuration
+if filereadable(expand("~/.vimrc.local")) | source ~/.vimrc.local | endif

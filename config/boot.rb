@@ -1,6 +1,7 @@
 # Defines our constants
 RACK_ENV = ENV['RACK_ENV'] ||= 'development' unless defined?(RACK_ENV)
 PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
+APP_VERSION = '0.1.0'.freeze
 
 # Load our dependencies
 require 'bundler/setup'

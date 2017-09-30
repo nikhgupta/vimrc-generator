@@ -1,18 +1,26 @@
 @import url("code.css");
 
-body {
-  padding-top: 54px;
-  background-color: #fafafa;
-}
-
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px;
+#customize-config {
+  #generate-config {
+    width: 200px;
+    &.affix-top {
+      right: 0;
+    }
+    &.affix {
+      right: 20px;
+    }
   }
 }
 
-div.generator {
-  margin-top: 20px;
+.section-block {
+  ul {
+    list-style: none;
+    padding: 0;
+    .section-check {
+      margin-right: 10px;
+    }
+    .code-block {
+      margin-top: 10px;
+    }
+  }
 }
-
-.strong { font-weight: bold; }

@@ -1,15 +1,17 @@
 @import url("code.css");
-body {
-  padding-top: 54px;
-  background-color: #fafafa; }
+#customize-config #generate-config {
+  width: 200px; }
+  #customize-config #generate-config.affix-top {
+    right: 0; }
+  #customize-config #generate-config.affix {
+    right: 20px; }
 
-@media (min-width: 992px) {
-  body {
-    padding-top: 56px; } }
-div.generator {
-  margin-top: 20px; }
-
-.strong {
-  font-weight: bold; }
+.section-block ul {
+  list-style: none;
+  padding: 0; }
+  .section-block ul .section-check {
+    margin-right: 10px; }
+  .section-block ul .code-block {
+    margin-top: 10px; }
 
 /*# sourceMappingURL=style.css.map */

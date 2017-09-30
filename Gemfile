@@ -17,11 +17,13 @@ source 'https://rubygems.org'
 gem 'rake'
 
 # Component requirements
+gem 'erubi', '~> 1.6'
 gem 'haml'
 gem 'sass'
-gem 'erubi', '~> 1.6'
 
 # Test requirements
+gem 'rack-test', require: 'rack/test', group: 'test'
+gem 'rspec', group: 'test'
 
 # Padrino Stable Gem
 gem 'padrino', '0.14.1.1'
@@ -34,6 +36,15 @@ gem 'padrino', '0.14.1.1'
 #   gem 'padrino-' + g, '0.14.1.1'
 # end
 
+gem 'activesupport'
 gem 'pry'
 gem 'pygments.rb'
-gem 'activesupport'
+
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'simplecov', require: false
+end
+
+group :test, :development do
+end
