@@ -6,6 +6,10 @@ API:
 
 Website:
   ☐ Add various badges from Travis, etc.
+  ☐ Provide a `copy` button on the homepage
 
 Configuration:
   ☐ Review vim configuration
+
+Code:
+  ☐ Remove code smells using Reek
