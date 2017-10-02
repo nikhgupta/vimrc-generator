@@ -4,11 +4,13 @@ VimRCG [VimRC Generator]
 VimRCG is an attempt to provide a ready-to-go VIM configuration that can be
 downloaded via `curl`, `wget`, etc.
 
-    $ curl https://vimrc.org/api/generate > ~/.vimrc; vim +PlugInstall +q
+    $ curl http://vimrc.org/api/generate > ~/.vimrc; vim +PlugInstall +q
 
 or, more simply:
 
-    $ curl https://vimrc.download > ~/.vimrc; vim +PlugInstall +q
+    $ curl http://vimrc.download > ~/.vimrc; vim +PlugInstall +q
+
+![Screenshot](https://raw.githubusercontent.com/nikhgupta/vimrcg/master/screenshot.png)
 
 At the moment, the generated Vim configuration is a port of my existing 
 Vim configuration, and may have several quirks and random mappings (maybe?).
