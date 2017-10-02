@@ -4,14 +4,26 @@ VimRCG [VimRC Generator]
 VimRCG is an attempt to provide a ready-to-go VIM configuration that can be
 downloaded via `curl`, `wget`, etc.
 
-    $ curl https://vimrc.org/generate > ~/.vimrc; vim +PlugInstall +q
+    $ curl https://vimrc.org/api/generate > ~/.vimrc; vim +PlugInstall +q
 
-At the moment, the generated Vim configuration is a port of my existing Vim
-configuration, and may have several quirks and random mappings (maybe?).
+or, more simply:
 
-This project hopes that the community will contribute in adapting the generated
-Vim configuration for general use, so that new users as well as experienced
-users can get started with VIM in a moment.
+    $ curl https://vimrc.download > ~/.vimrc; vim +PlugInstall +q
+
+At the moment, the generated Vim configuration is a port of my existing 
+Vim configuration, and may have several quirks and random mappings (maybe?).
+
+The code was written over a weekend - for my brother who was having 
+difficulties with Vim configuration. And, therefore, should be 
+considered to be an alpha/unstable release at the moment. Several things 
+may not work out on the `vimrc.org` website, or generated config may not 
+work as expected. Although, I have tried to ensure such issues are 
+minimal, expect inconsistencies till the time code for the website, and 
+vim cofig is revisited.
+
+This project hopes that the community will contribute in adapting the 
+generated Vim configuration for general use, so that new users as well 
+as experienced users can get started with VIM in a moment.
 
 API Documentation
 -----------------
@@ -56,6 +68,11 @@ Return a JSON array of all topic names available.
 Return a JSON comprising of only the topics listed above. Required topics likes
 `variables`, etc. are not returned unless mentioned explicitely.
 
+### GET /topics.json?exclude=sane_defaults,macosx
+
+Return a JSON with all topics excluding the ones listed above. Required 
+topics likes `variables`, etc. can also be filtered out.
+
 ### GET /sections.json?only=\<key\>
 
 **INTERNAL API**
@@ -66,8 +83,8 @@ calculated in a specific way:
 - Calculate `section_id` for each section:
   
         # assuming we want to target 7th section in a topic
-        section_id = "%04d" % (topic.index * 100 + 6)
+        section_id = "%05d" % (topic.index * 100 + 6)
 
-- Join all such `section_id`s to create a string. This is the `key` parameter.
+- Join all such `section_id`s as a CSV string. This is the `key` parameter.
 
 I am open to any suggestions that eases out requesting particular sections.

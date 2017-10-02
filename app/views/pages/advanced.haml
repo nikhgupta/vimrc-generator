@@ -18,7 +18,8 @@
         Customization
       .meta
         %i.fa.fa-clock-o
-        Last updated: Jan 25th, 2016
+        Last updated:
+        = `git log -1 --format=%cr`.strip
     .doc-body
       .doc-content
         .content-inner
@@ -44,4 +45,5 @@
           %ul#doc-menu.nav.doc-menu{"data-spy" => "affix"}
             - topic_list.each do |topic|
               %li
-                %a.scrollto{href: "##{topic.name.downcase.gsub(/[^a-z0-9]/, '-')}-section"}=topic.name
+                %a.scrollto{href: "##{topic.name.downcase.gsub(/[^a-z0-9]/, '-')}-section"}
+                  =topic.sanitized_name
