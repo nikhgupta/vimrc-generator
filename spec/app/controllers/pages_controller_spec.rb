@@ -27,6 +27,17 @@ RSpec.describe '/' do
   end
 end
 
+RSpec.describe '/api' do
+  before(:each) { visit '/api' }
+
+  it 'is branded' do
+    expect(page.status_code).to eq 200
+    expect(page).to have_title('VimRCG')
+    expect(page).to have_content('VimRC Generator')
+    expect(page).to have_css('h1', text: 'API Documentation')
+  end
+end
+
 RSpec.describe '/customize' do
   before(:each) { visit '/customize' }
   let(:list) { TopicList.from_params }
@@ -35,9 +46,6 @@ RSpec.describe '/customize' do
     expect(page.status_code).to eq 200
     expect(page).to have_title('VimRCG')
     expect(page).to have_content('VimRC Generator')
-  end
-
-  it 'clearly, defines the reason this page exists' do
     expect(page).to have_css('h1', text: 'Customization')
   end
 
