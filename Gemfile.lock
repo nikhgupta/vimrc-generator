@@ -74,6 +74,7 @@ GEM
       mime-types (< 3)
       padrino-core (= 0.14.1.1)
     padrino-support (0.14.1.1)
+    pandoc-ruby (2.0.2)
     poltergeist (1.13.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -142,6 +143,7 @@ DEPENDENCIES
   erubi (~> 1.6)
   haml
   padrino (= 0.14.1.1)
+  pandoc-ruby
   poltergeist
   pry
   pygments.rb

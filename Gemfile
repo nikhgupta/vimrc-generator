@@ -37,7 +37,7 @@ gem 'padrino', '0.14.1.1'
 # end
 
 gem 'activesupport'
-gem 'pry'
+gem 'pandoc-ruby'
 gem 'pygments.rb'
 
 group :test do
@@ -47,4 +47,5 @@ group :test do
 end
 
 group :test, :development do
+  gem 'pry'
 end

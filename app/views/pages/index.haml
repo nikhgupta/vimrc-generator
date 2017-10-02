@@ -8,7 +8,7 @@
     .tagline
       %p Download customizable VIM configuration using an API
       %p
-        Designed with
+        Created with
         %i.fa.fa-heart
         for VIM users
 
@@ -35,11 +35,21 @@
             %i.icon.fa.fa-paper-plane
           %h3.title Quick Start
           %p.intro Get started with VIM in a moment
-          %a.link{target: "command"}
+
+      .item.item-blue.col-md-4.col-sm-6.col-xs-6
+        .item-inner
+          .icon-holder
+            %i.icon.fa.fa-paper-plane
+          %h3.title Customizable
+          %p.intro Hand-pick only the config you need
+          %a.link{href: url_for(:pages, :customize)}
             %span
 
-      = partial 'feature_card'
-      = partial 'feature_card'
-      = partial 'feature_card'
-      = partial 'feature_card'
-      = partial 'feature_card'
+      .item.item-red.col-md-4.col-sm-6.col-xs-6
+        .item-inner
+          .icon-holder
+            %i.icon.fa.fa-book
+          %h3.title API
+          %p.intro Do more by fetching configs over API
+          %a.link{href: url_for(:pages, :api)}
+            %span

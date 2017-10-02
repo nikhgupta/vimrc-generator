@@ -4,6 +4,10 @@ VimRCG::App.controllers :pages, map: '/' do
   end
 
   get :customize do
-    render 'advanced'
+    render 'customization'
+  end
+
+  get :api do
+    render 'api-docs'
   end
 end
